@@ -1,5 +1,5 @@
 module.exports = {
   port: process.env.PORT || 3000,
-  dbUri: process.env.MONGODB_URI || 'mongodb://localhost/have-a-rest',
-  sessionSecret: process.env.SESSION_SECRET || 'YghT5s617/1{%sDt'
+  dbUri: process.env.MONGODB_URI || 'mongodb://localhost/london-exhibitions',
+  sessionSecret: process.env.SESSION_SECRET || 'shh it\'s a secret'
 };
