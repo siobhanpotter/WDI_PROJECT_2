@@ -3,11 +3,39 @@ const router  = express.Router();
 // const statics = require('../controllers/statics');
 const registrations  = require('../controllers/registrations');
 const sessions       = require('../controllers/sessions');
+const exhibitions         = require('../controllers/exhibitions');
+
 
 router.get('/', (req, res) => res.render('homepage'));
 
 // router.route('/')
 //   .get(statics.index);
+
+// function secureRoute(req, res, next) {
+//   if (!req.session.userId) {
+//     return req.session.regenerate(() => {
+//       req.flash('danger', 'You must be logged in.');
+//       res.redirect('/login');
+//     });
+//   }
+
+//   return next();
+// }
+
+// router.get('/exhibitions', (req, res) => {
+//   Exhibition
+//     .find()
+//     .exec()
+//     .then((exhibitions) => {
+//       res.render('exhibitions', { exhibitions });
+//     })
+//     .catch((err) => {
+//       res.status(500).end(err);
+//     });
+// });
+
+router.route('/exhibitions')
+  .get(exhibitions.create);
 
 router.route('/register')
   .get(registrations.new)

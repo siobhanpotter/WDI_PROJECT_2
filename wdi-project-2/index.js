@@ -11,6 +11,8 @@ const customResponses = require('./lib/customResponses');
 const authentication = require('./lib/authentication');
 const errorHandler = require('./lib/errorHandler');
 const User = require('./models/user');
+// const Exhibition = require('./models/exhibition');
+
 
 
 const app = express();

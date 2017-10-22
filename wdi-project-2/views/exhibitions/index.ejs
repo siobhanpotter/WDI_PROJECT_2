@@ -1,0 +1,17 @@
+<h1>exhibitions</h1>
+
+<ul>
+  <% exhibitions.forEach((exhibition) => { %>
+    <li>
+      <h3><%= exhibition.name %></h3>
+      <h4><%= exhibition.exhibitionDate %></h4>
+      <p><%= exhibition.synopsis %></p>
+      <p><%= exhibition.disipline %></p>
+    </li>
+  <% }) %>
+</ul>
+
+<%# name: 'The Bourne Identity',
+exhibitionDate: '2002-06-14',
+synopsis: 'A man is picked up by a fishing boat, bullet-riddled and suffering from amnesia, before racing to elude assassins and regain his memory.',
+disipline: 'Action'%>
