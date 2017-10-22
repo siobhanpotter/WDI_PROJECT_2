@@ -10,6 +10,7 @@ function registrationsCreate(req, res, next) {//{!!!!!!!!!!!!!!!!!!!!!!!!next ma
   User
     .create(req.body)
     .then((user) => {
+      req.flash('info', `Thanks for registering, ${user.username}!`);
       res.redirect('/');
       console.log(user);
       console.log(req.body);

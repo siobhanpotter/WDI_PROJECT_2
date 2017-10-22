@@ -58,7 +58,7 @@ app.use((req, res, next) => {
 });
 
 
-app.use(flash());
+
 app.use(customResponses);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride(function (req) {
@@ -68,6 +68,7 @@ app.use(methodOverride(function (req) {
     return method;
   }
 }));
+app.use(flash());
 app.use(authentication);
 app.use(routes);
 app.use(errorHandler);
