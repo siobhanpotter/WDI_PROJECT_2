@@ -1,6 +1,4 @@
-
 const User = require('../models/user');
-
 
 ///////////////I dont know what this does
 function staticsIndex(req, res) {

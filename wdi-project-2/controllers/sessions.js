@@ -6,7 +6,8 @@ function sessionsNew(req, res) {
 
 //take imputted email, find user in the database, check if password matches existing, if either dont match display error
 
-function sessionsCreate(req, res) {
+
+function sessionsCreate(req, res, next) {
   User
     .findOne({ email: req.body.email })
     .then((user) => {

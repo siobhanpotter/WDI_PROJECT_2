@@ -22,6 +22,7 @@ userSchema
   .set(function setPasswordConfirmation(passwordConfirmation) {
     this._passwordConfirmation = passwordConfirmation;
   });
+  
 
 userSchema.pre('validate', function checkPassword(next) {
   if(this.isModified('password') && this._passwordConfirmation!== this.password) this.invalidate('passwordConfirmation', 'Does not match');

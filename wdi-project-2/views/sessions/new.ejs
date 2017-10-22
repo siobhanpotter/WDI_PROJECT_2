@@ -2,6 +2,10 @@
 <%# THIS IS THE PAGE THAT WILL BE DISPLAYED WHEN YOU CLICK ON LOGIN%>
 <h1>Login</h1>
 
+<% if (locals.message) { %>
+  <p><%= message %></p>
+<% } %>
+
 <form method="POST" action="/login">
   <div class="form-group">
     <label for="email">Email</label>

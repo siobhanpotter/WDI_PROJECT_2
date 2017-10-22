@@ -1,13 +1,13 @@
 const express = require('express');
 const router  = express.Router();
-const statics = require('../controllers/statics');
+// const statics = require('../controllers/statics');
 const registrations  = require('../controllers/registrations');
 const sessions       = require('../controllers/sessions');
 
 router.get('/', (req, res) => res.render('homepage'));
 
-router.route('/')
-  .get(statics.index);
+// router.route('/')
+//   .get(statics.index);
 
 router.route('/register')
   .get(registrations.new)
