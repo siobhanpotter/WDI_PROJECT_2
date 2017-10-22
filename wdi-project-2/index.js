@@ -28,41 +28,35 @@ app.set('views', `${__dirname}/views`);
 app.use(expressLayouts);
 app.use(express.static(`${__dirname}/public`));
 app.use(morgan('dev'));
+
 app.use(session({
   secret: sessionSecret,
   resave: false,
   saveUninitialized: false
 }));
 
-// app.use(session({
-//   secret: process.env.SESSION_SECRET || 'shh it\'s a secret',
-//   resave: false,
-//   saveUninitialized: false
-// }));
 
+app.use((req, res, next) => {
+  if (!req.session.userId) return next();
 
-////////////////////////////////////////////////not sure about this part
-/////////////////////////////////////////////////////////////////////////////
-// app.use((req, res, next) => {
-//   if (!req.session.userId) return next();
-//
-//   User
-//     .findById(req.session.userId)
-//     .exec()
-//     .then(user=> {
-//       if (!user) {
-//         return req.session.regenerate(() => {
-//           res.redirect('/');
-//         });
-//       }
-//       req.session.userId = user._id;
-//       res.locals.user = user;
-//       res.locals.isLoggedIn = true;
-//
-//       next();
-//     });
-// });
-/////////////////////////////////////////////////////////////////////
+  User
+    .findById(req.session.userId)
+    .exec()
+    .then(user=> {
+      if (!user) {
+        return req.session.regenerate(() => {
+          req.flash('danger', 'You must be logged in.');
+          res.redirect('/');
+        });
+      }
+      req.session.userId = user._id;
+      res.locals.user = user;
+      res.locals.isLoggedIn = true;
+
+      next();
+    });
+});
+
 
 app.use(flash());
 app.use(customResponses);

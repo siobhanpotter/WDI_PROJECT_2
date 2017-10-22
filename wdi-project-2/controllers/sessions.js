@@ -7,16 +7,16 @@ function sessionsNew(req, res) {
 //take imputted email, find user in the database, check if password matches existing, if either dont match display error
 
 
-function sessionsCreate(req, res, next) {
+function sessionsCreate(req, res, next) {////!!!!!!!!!!!!!!!!!!!!!!!!!!!!next may be a problem
   User
     .findOne({ email: req.body.email })
     .then((user) => {
       if(!user || !user.validatePassword(req.body.password)) {
         req.flash('danger', 'Unknown email/password combination');
-        console.log(user);
+        // console.log(user);
         return res.redirect('/login');
       }
-
+      console.log(user);
       req.session.userId = user.id;
       req.session.isAuthenticated = true;
 
@@ -28,11 +28,14 @@ function sessionsCreate(req, res, next) {
   // .catch(next);
 }
 
-
+function sessionsDelete(req, res) {
+  return req.session.regenerate(() => res.redirect('/'));
+}
 
 
 
 module.exports = {
   new: sessionsNew,
-  create: sessionsCreate
+  create: sessionsCreate,
+  delete: sessionsDelete
 };

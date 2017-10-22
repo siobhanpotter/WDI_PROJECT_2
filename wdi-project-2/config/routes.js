@@ -17,6 +17,9 @@ router.route('/login')
   .get(sessions.new)
   .post(sessions.create);
 
+router.route('/logout')
+  .get(sessions.delete);
+
 // RESTful routes
 // All URLS should contain the PLURAL... don't chose octopus or people or something silly.
 // INDEX
