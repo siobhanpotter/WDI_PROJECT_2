@@ -28,9 +28,6 @@ app.set('views', `${__dirname}/views`);
 app.use(expressLayouts);
 app.use(express.static(`${__dirname}/public`));
 app.use(morgan('dev'));
-
-
-//for the session
 app.use(session({
   secret: sessionSecret,
   resave: false,
@@ -43,26 +40,29 @@ app.use(session({
 //   saveUninitialized: false
 // }));
 
+
 ////////////////////////////////////////////////not sure about this part
-app.use((req, res, next) => {
-  if (!req.session.userId) return next();
-
-  User
-    .findById(req.session.userId)
-    .exec()
-    .then(user=> {
-      if (!user) {
-        return req.session.regenerate(() => {
-          res.redirect('/');
-        });
-      }
-      req.session.userId = user._id;
-      res.locals.user = user;
-      res.locals.isLoggedIn = true;
-
-      next();
-    });
-});
+/////////////////////////////////////////////////////////////////////////////
+// app.use((req, res, next) => {
+//   if (!req.session.userId) return next();
+//
+//   User
+//     .findById(req.session.userId)
+//     .exec()
+//     .then(user=> {
+//       if (!user) {
+//         return req.session.regenerate(() => {
+//           res.redirect('/');
+//         });
+//       }
+//       req.session.userId = user._id;
+//       res.locals.user = user;
+//       res.locals.isLoggedIn = true;
+//
+//       next();
+//     });
+// });
+/////////////////////////////////////////////////////////////////////
 
 app.use(flash());
 app.use(customResponses);

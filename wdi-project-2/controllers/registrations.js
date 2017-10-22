@@ -1,7 +1,7 @@
 const User = require('../models/user');
 
 //Function that renders the registration form
-function registrationsNew(req, res) {
+function registrationsNew(req, res) { //(b)
   res.render('registrations/new');
 }
 

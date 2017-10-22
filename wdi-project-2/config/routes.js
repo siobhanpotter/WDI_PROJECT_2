@@ -4,13 +4,12 @@ const statics = require('../controllers/statics');
 const registrations  = require('../controllers/registrations');
 const sessions       = require('../controllers/sessions');
 
-
 router.get('/', (req, res) => res.render('homepage'));
 
 router.route('/')
   .get(statics.index);
 
-router.route('/register')//  /register is the place URL
+router.route('/register')
   .get(registrations.new)
   .post(registrations.create);
 

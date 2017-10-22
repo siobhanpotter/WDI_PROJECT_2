@@ -1,9 +1,6 @@
-//require mongoose - a way to talk to the database
 const mongoose = require('mongoose');
-//for encrypting the password
 const bcrypt   = require('bcrypt');
 
-//blueprint for the user
 const userSchema = new mongoose.Schema({
   username: { type: String },
   email: { type: String, required: true, unique: true },
@@ -38,5 +35,4 @@ userSchema.methods.validatePassword = function validatePassword(password) {
 };
 
 
-//call userSchema User and export it
 module.exports = mongoose.model('User', userSchema);
