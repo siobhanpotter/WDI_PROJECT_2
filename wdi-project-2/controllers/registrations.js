@@ -11,7 +11,7 @@ function registrationsCreate(req, res, next) {//{!!!!!!!!!!!!!!!!!!!!!!!!next ma
     .create(req.body)
     .then((user) => {
       req.flash('info', `Thanks for registering, ${user.username}!`);
-      res.redirect('/');
+      res.redirect('/login');
       console.log(user);
       console.log(req.body);
     })
@@ -22,10 +22,6 @@ function registrationsCreate(req, res, next) {//{!!!!!!!!!!!!!!!!!!!!!!!!next ma
       res.status(500).end();
     });
 }
-
-// function registrationsCreate() {
-//   console.log('hello');
-// }
 
 
 module.exports = {

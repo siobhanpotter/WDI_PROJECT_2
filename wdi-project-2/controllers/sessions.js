@@ -17,19 +17,23 @@ function sessionsCreate(req, res, next) {////!!!!!!!!!!!!!!!!!!!!!!!!!!!!next ma
         return res.redirect('/login');
       }
       console.log(user);
+      req.flash('success', `Welcome back, ${user.username}!`);
       req.session.userId = user.id;
       req.session.isAuthenticated = true;
 
       req.user = user;
+      // req.flash('success', `${user.username}, you\'ve logged in!`);
 
-      req.flash('success', `Welcome back, ${user.username}!`);
       res.redirect('/');
     });
   // .catch(next);
 }
 
 function sessionsDelete(req, res) {
-  return req.session.regenerate(() => res.redirect('/'));
+  return req.session.regenerate(() => {
+    req.flash('success', 'You successfully logged out.');
+    res.redirect('/');
+  });
 }
 
 
