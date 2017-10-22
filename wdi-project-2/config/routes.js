@@ -12,7 +12,8 @@ const sessions       = require('../controllers/sessions');
 //A home route
 router.get('/', (req, res) => res.render('homepage'));
 
-
+router.route('/')
+  .get(statics.index);
 
 router.route('/register')//  /register is the place URL
   .get(registrations.new)

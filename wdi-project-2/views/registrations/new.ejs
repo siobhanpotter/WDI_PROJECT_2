@@ -6,6 +6,12 @@
   <p><%= message %></p>
 <% } %>
 
+
+<% if (message.length > 0) { %>
+   <div class="welcome-message"><%= message %></div>
+ <% } %>
+
+
 <form method="POST" action="/register">
   <div class="form-group">
     <label for="username">Username</label>

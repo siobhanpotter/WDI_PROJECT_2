@@ -8,18 +8,19 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 //package for cookies
 const session = require('express-session');
-const flash = require('express-flash');
+const flash = require('express-flash');//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //d.1 require roots
 const routes = require('./config/routes');
 const customResponses = require('./lib/customResponses');
 const authentication = require('./lib/authentication');
 const errorHandler = require('./lib/errorHandler');
+const User = require('./models/user');
 
 
 //A. envoke express
 const app = express();
 //3.set the port
-const { port, dbUri, sessionSecret } = require('./config/environment');
+const { port, dbUri, secret } = require('./config/environment');
 
 mongoose.Promise = require('bluebird');
 mongoose.connect(dbUri, { useMongoClient: true });
@@ -40,7 +41,7 @@ app.use(morgan('dev'));
 
 //for the session
 app.use(session({
-  secret: sessionSecret,
+  secret: secret,
   resave: false,
   saveUninitialized: false
 }));
@@ -50,6 +51,27 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+
+////////////////////////////////////////////////not sure about this part
+app.use((req, res, next) => {
+  if (!req.session.userId) return next();
+
+  User
+    .findById(req.session.userId)
+    .exec()
+    .then(user=> {
+      if (!user) {
+        return req.session.regenerate(() => {
+          res.redirect('/');
+        });
+      }
+      req.session.userId = user._id;
+      res.locals.user = user;
+      res.locals.isLoggedIn = true;
+
+      next();
+    });
+});
 
 app.use(flash());
 app.use(customResponses);
