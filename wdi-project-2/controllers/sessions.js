@@ -1,12 +1,8 @@
-//requires the database
 const User = require('../models/user');
-const mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
 
 function sessionsNew(req, res) {
   res.render('sessions/new');
 }
-
 
 //take imputted email, find user in the database, check if password matches existing, if either dont match display error
 
