@@ -3,6 +3,7 @@
 <ul>
   <% exhibitions.forEach((exhibition) => { %>
     <li>
+      <img class="thumbnail" src="<%= exhibition.image %>" alt="<%= exhibition.name %>">
       <h3><%= exhibition.name %></h3>
       <h4><%= exhibition.exhibitionDate %></h4>
       <p><%= exhibition.synopsis %></p>

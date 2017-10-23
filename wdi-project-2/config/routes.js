@@ -37,6 +37,32 @@ router.get('/', (req, res) => res.render('homepage'));
 router.route('/exhibitions')
   .get(exhibitions.create);
 
+
+
+router.route('/exhibitions/:id')
+  .get(exhibitions.showOne);
+
+
+// .put(secureRoute, hotelsController.update)
+// .delete(secureRoute, hotelsController.delete);
+
+// router.get('/exhibitions/:name', (req, res) => {
+//   Exhibition
+//     .findOne({ name: req.params.name })
+//     .exec()
+//     .then((exhibition) => {
+//       if(!exhibition) return res.status(404).end();
+//       res.render('exhibition', { exhibition });
+//     })
+//     .catch(() => {
+//       res.status(500).end();
+//     });
+// });
+
+
+
+
+
 router.route('/register')
   .get(registrations.new)
   .post(registrations.create);
