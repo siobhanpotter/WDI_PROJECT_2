@@ -20,26 +20,10 @@ function exhibitionsCreate(req, res) {
     });
 }
 
-
-// function showOneExhibition(req, res) {
-//   Exhibition
-//     .findOne({ name: req.params.name })
-//     .exec()
-//     .then((exhibition) => {
-//       if(!exhibition) return res.status(404).end();
-//       res.render('exhibition/show', { exhibition });
-//     })
-//     .catch(() => {
-//       res.status(500).end();
-//     });
-// }
-
-
-
 function showOneExhibition(req, res, next) {
   Exhibition
     .findById(req.params.id)
-    // .populate('hello')
+    .populate('createdBy comments.createdBy')//***************************************
     .exec()
     .then(exhibition => {
       if(!exhibition) return res.notFound();
@@ -49,9 +33,53 @@ function showOneExhibition(req, res, next) {
 }
 
 
+
+
+//**************************************************************************
+function createCommentRoute(req, res, next) {
+
+
+
+  Exhibition
+    .findById(req.params.id)
+    .exec()
+    .then((exhibition) => {
+      if(!exhibition) return res.notFound();
+      req.body.createdBy = req.session.userId;
+      exhibition.comments.push(req.body); // create an embedded record
+      console.log(req.body);
+
+      return exhibition.save();
+
+    })
+    .then((exhibition) => res.redirect(`/exhibitions/${exhibition.id}`))
+    .catch(next);
+}
+
+//************************************************************************
+function deleteCommentRoute(req, res, next) {
+  // console.log('hello');
+  Exhibition
+    .findById(req.params.id)
+    .exec()
+    .then((exhibition) => {
+      if(!exhibition) return res.notFound();
+      // get the embedded record by it's id
+      const comment = exhibition.comments.id(req.params.commentId);
+      comment.remove();
+
+      return exhibition.save();
+    })
+    .then((exhibition) => res.redirect(`/exhibitions/${exhibition.id}`))
+    .catch(next);
+}
+//**************************************************************************
+
 module.exports = {
   // new: exhibitionsNew,
   create: exhibitionsCreate,
-  showOne: showOneExhibition
+  showOne: showOneExhibition,
+  createComment: createCommentRoute,
+  deleteComment: deleteCommentRoute
 };
 //*******************************************************************************

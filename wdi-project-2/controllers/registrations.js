@@ -24,6 +24,9 @@ function registrationsCreate(req, res, next) {//{!!!!!!!!!!!!!!!!!!!!!!!!next ma
 }
 
 
+
+
+
 module.exports = {
   new: registrationsNew,
   create: registrationsCreate

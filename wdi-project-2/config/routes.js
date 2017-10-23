@@ -2,8 +2,8 @@ const express = require('express');
 const router  = express.Router();
 // const statics = require('../controllers/statics');
 const registrations  = require('../controllers/registrations');
-const sessions       = require('../controllers/sessions');
-const exhibitions         = require('../controllers/exhibitions');
+const sessions  = require('../controllers/sessions');
+const exhibitions = require('../controllers/exhibitions');
 
 
 router.get('/', (req, res) => res.render('homepage'));
@@ -22,6 +22,7 @@ router.get('/', (req, res) => res.render('homepage'));
 //   return next();
 // }
 
+
 // router.get('/exhibitions', (req, res) => {
 //   Exhibition
 //     .find()
@@ -38,13 +39,12 @@ router.route('/exhibitions')
   .get(exhibitions.create);
 
 
-
 router.route('/exhibitions/:id')
   .get(exhibitions.showOne);
 
 
-// .put(secureRoute, hotelsController.update)
-// .delete(secureRoute, hotelsController.delete);
+// .put(secureRoute, exhibitionsController.update)
+// .delete(secureRoute, exhibitionsController.delete);
 
 // router.get('/exhibitions/:name', (req, res) => {
 //   Exhibition
@@ -60,9 +60,6 @@ router.route('/exhibitions/:id')
 // });
 
 
-
-
-
 router.route('/register')
   .get(registrations.new)
   .post(registrations.create);
@@ -73,6 +70,14 @@ router.route('/login')
 
 router.route('/logout')
   .get(sessions.delete);
+
+//****************************************************************************
+router.route('/exhibitions/:id/comments')
+  .post(exhibitions.createComment);
+
+router.route('/exhibitions/:id/comments/:commentId')
+  .delete(exhibitions.deleteComment);
+//*****************************************************************************
 
 // RESTful routes
 // All URLS should contain the PLURAL... don't chose octopus or people or something silly.

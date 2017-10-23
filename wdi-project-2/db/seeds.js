@@ -24,7 +24,6 @@ User
     password: 'password',
     passwordConfirmation: 'password'
   }])
-  //*********************************************************************************
   .then((users) => {
     console.log(`${users.length} users created!`);
 
@@ -52,7 +51,7 @@ User
     console.log(exhibitions);
   })
 
-  //****************************************************************************************
+  
   .catch((err) => {
     console.log(err);
   })
