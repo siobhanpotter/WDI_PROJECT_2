@@ -1,16 +1,23 @@
 <h1>exhibitions</h1>
 
-<ul>
-  <% exhibitions.forEach((exhibition) => { %>
-    <li>
+<% exhibitions.forEach((exhibition) => { %>
+  <div class="large-4 columns">
+    <a href="/exhibitions/<%= exhibition.id %>">
       <img class="thumbnail" src="<%= exhibition.image %>" alt="<%= exhibition.name %>">
-      <h3><%= exhibition.name %></h3>
-      <h4><%= exhibition.exhibitionDate %></h4>
-      <p><%= exhibition.synopsis %></p>
-      <p><%= exhibition.disipline %></p>
-    </li>
-  <% }) %>
-</ul>
+      <h2><%= exhibition.name %></h2>
+      <p>
+        <%= exhibition.exhibitionDate %><br>
+        <%= exhibition.synopsis %><br>
+        <%= exhibition.disipline %>
+      </p>
+
+      <p>
+        <% while(exhibition.stars--) { %> &star; <% } %>
+      </p>
+    </a>
+  </div>
+<% }) %>
+
 
 <%# name: 'The Bourne Identity',
 exhibitionDate: '2002-06-14',

@@ -11,7 +11,9 @@ const User = require('../models/user');
 const Exhibition = require('../models/exhibition');
 
 // Drop the model
+Exhibition.collection.drop();
 User.collection.drop();
+
 
 
 // Create the models
@@ -51,7 +53,7 @@ User
     console.log(exhibitions);
   })
 
-  
+
   .catch((err) => {
     console.log(err);
   })
