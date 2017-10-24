@@ -1,12 +1,21 @@
 
 <%# THIS IS THE PAGE THAT WILL BE DISPLAYED WHEN YOU CLICK ON LOGIN%>
-<h1>Login</h1>
+
+
+
+<main class="register">
+<div class="registration-container">
+
+<div class="row">
+
+  <div class="col-lg-6">
+    <h1>Login</h1>
 
 <% if (locals.message) { %>
   <p><%= message %></p>
 <% } %>
 
-<form method="POST" action="/login">
+<form method="POST" action="/login" class="login-form">
   <div class="form-group">
     <label for="email">Email</label>
     <input type="text" name="email" id="email" class="form-control">
@@ -18,3 +27,9 @@
 
   <button class="btn btn-primary">Login</button>
 </form>
+
+</div>
+
+</div>
+</div>
+</main>

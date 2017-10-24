@@ -59,6 +59,11 @@ app.use((req, res, next) => {
     });
 });
 
+app.use((req, res, next) => {
+  global.currentPath = req.path;
+  next();
+});
+
 
 
 app.use(customResponses);

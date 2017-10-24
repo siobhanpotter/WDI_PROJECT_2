@@ -7,6 +7,9 @@ const Exhibition = require('../models/exhibition');
 //   res.render('exhibitions/new');
 // }
 
+function exhibitionsNew(req, res) {
+  return res.render('exhibitions/new');
+}
 
 function exhibitionsCreate(req, res) {
   Exhibition
@@ -76,10 +79,10 @@ function deleteCommentRoute(req, res, next) {
 //**************************************************************************
 
 module.exports = {
-  // new: exhibitionsNew,
+  new: exhibitionsNew,
   create: exhibitionsCreate,
   showOne: showOneExhibition,
   createComment: createCommentRoute,
   deleteComment: deleteCommentRoute
 };
-//*******************************************************************************
+//******************************************************************************

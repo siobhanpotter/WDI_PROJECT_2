@@ -1,17 +1,84 @@
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  padding: 0;
 }
-// 
-// .main {
-//   margin: 1px
-// }
-//
+
+.homepage {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: url('../images/hero2.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 // .hero-image {
 //   width: 100%;
+//   height: 100vh;
+//   position: relative;
 // }
 
-// .selector-for-some-widget {
-//   -webkit-box-sizing: content-box;
-//      -moz-box-sizing: content-box;
-//           box-sizing: content-box;
-// }
+.heading {
+  font-size: 100px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+.card-main {
+  width: 70%;
+  margin: 40px auto;
+}
+
+.index-title {
+  text-align: center;
+  padding: 50px;
+}
+
+
+
+//////////////////////////
+.register {
+  background: url('../images/hero2.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.registration-container {
+  width: 100%;
+  padding: 100px 200px;
+}:
+
+.registraion-form {
+  background-color: rgba(black, 0.2);
+  padding: 15px;
+}
+
+.login-form {
+  background-color: rgba(black, 0.2);
+  padding: 15px;
+}
+
+
+
+
+.show-width {
+  width: 60%;
+}
+
+
+
+
+.card-block {
+  hieght: 100px;
+}

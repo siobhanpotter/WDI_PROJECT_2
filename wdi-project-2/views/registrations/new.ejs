@@ -1,10 +1,18 @@
 
 <%# THIS IS THE FORM THAT WILL BE DISPLAYED WHEN YOU go to /register%>
+
+<main class="register">
+<div class="registration-container">
+
+<div class="row">
+
+  <div class="col-lg-6">
+
 <% if (locals.message) { %>
   <p><%= message %></p>
 <% } %>
 
-<form method="POST" action="/register">
+<form method="POST" action="/register" class="registraion-form">
   <div class="form-group">
     <label for="username">Username</label>
     <input type="text" name="username" id="username" class="form-control">
@@ -22,6 +30,12 @@
     <label for="passwordConfirmation">Password Confirmation</label>
     <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control">
   </div>
-  
+
   <button class="btn btn-primary">Register</button>
 </form>
+
+</div>
+
+</div>
+</div>
+</main>

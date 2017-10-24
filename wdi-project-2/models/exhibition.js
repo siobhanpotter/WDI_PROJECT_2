@@ -20,7 +20,7 @@ const exhibitionSchema = new mongoose.Schema({
   exhibitionDate: { type: String },
   synopsis: { type: String },
   discipline: { type: String },
-  image: [{ type: String }],
+  image: { type: String },
   comments: [ commentSchema ]
 });
 

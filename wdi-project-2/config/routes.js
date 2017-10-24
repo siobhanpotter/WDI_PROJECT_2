@@ -10,7 +10,8 @@ const secureRoute = require('../lib/secureRoute');
 router.get('/', (req, res) => res.render('homepage'));
 
 router.route('/exhibitions')
-  .get(exhibitions.create);
+  .get(exhibitions.create)
+  .get(exhibitions.new);
 
 router.route('/exhibitions/:id')
   .get(exhibitions.showOne);
