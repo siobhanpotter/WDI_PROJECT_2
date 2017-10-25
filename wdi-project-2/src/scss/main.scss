@@ -99,3 +99,29 @@ hr {
 .thumbnail {
   margin-bottom: 10px;
 }
+
+
+
+
+
+
+
+.container {
+  display: flex; /* or inline-flex */
+}
+
+
+.row{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.row .item{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}

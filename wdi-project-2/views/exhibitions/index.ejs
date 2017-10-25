@@ -7,7 +7,7 @@
 
 <div class="container" class="card-main">
 
-  <div class="row">
+  <div class="row" max-height="500px" class="item">
     <% exhibitions.forEach((exhibition) => { %>
 
       <div class="col-lg-4" class="card-wrapper">
@@ -17,7 +17,7 @@
 
           <img class="card-img-top" class="thumbnail" src="<%= exhibition.image %>" alt="<%= exhibition.name %>" alt="Card image cap" width="100%">
 
-          <div class="card-block">
+          <div class="card-block" >
             <h4 class="card-title"><%= exhibition.name %></h4>
             <p class="card-text">
               <%= exhibition.exhibitionDate %><br>
