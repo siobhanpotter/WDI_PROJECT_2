@@ -4,6 +4,10 @@ body {
   padding: 0;
 }
 
+.nav-title {
+  font-size: 30px;
+}
+
 .homepage {
   width: 100%;
   height: 100vh;
@@ -17,15 +21,10 @@ body {
   background-size: cover;
 }
 
-// .hero-image {
-//   width: 100%;
-//   height: 100vh;
-//   position: relative;
-// }
-
 .cover-title {
-  font-size: 150px;
-  font-color: white;
+  font-size: 140px;
+  font-weight: bold;
+  // color: white;
 }
 
 
@@ -41,7 +40,6 @@ body {
 
 .index-title {
   text-align: center;
-  // padding: 40px;
   margin: 40px;
   h1 {
     font-size: 30px;
@@ -55,7 +53,6 @@ hr {
 }
 
 
-
 .login-background {
   width: 100%;
   height: calc(100vh - 66px);
@@ -67,7 +64,6 @@ hr {
 }
 
 
-
 .registration-container {
   width: 100%;
   height: calc(100vh - 66px);
@@ -76,7 +72,6 @@ hr {
 .registraion-form {
   padding: 15px;
 }
-
 
 .form-css {
   padding: 50px;
@@ -92,8 +87,15 @@ hr {
   }
 }
 
-
 .show-main {
   margin: 40px;
-  
+
+}
+
+.show-text {
+  margin-top: 10px;
+}
+
+.thumbnail {
+  margin-bottom: 10px;
 }
