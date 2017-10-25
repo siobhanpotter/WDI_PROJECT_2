@@ -1,49 +1,49 @@
 
+<div class="show-main">
 <div class="container">
-<div class="row" class="show-width">
-<div class="col-lg-8">
-<li>
-  <img class="thumbnail" src="<%= exhibition.image %>" alt="<%= exhibition.name %>">
-  <h3><%= exhibition.name %></h3>
-  <h4><%= exhibition.exhibitionDate %></h4>
-  <p><%= exhibition.synopsis %></p>
-  <p><%= exhibition.disipline %></p>
-</li>
-</div>
+  <div class="row">
+
+    <div class="col-lg-9">
 
 
 
-<div class="col-lg-4">
-<aside>
-<% if(locals.isAuthenticated) { %>
-  <section>
-    <h4>Leave a comment</h4>
-    <form method="POST" action="/exhibitions/<%= exhibition.id %>/comments">
-      <textarea name="content" id="content" placeholder="Comment"></textarea>
-      <button class="button">Leave a comment</button>
-    </form>
-  </section>
-<% } %>
+      <img class="card-img-top" class="thumbnail" src="/<%= exhibition.image %>" alt="<%= exhibition.name %>" alt="Card image cap" width="100%">
+      <h3><%= exhibition.name %></h3>
+      <h4><%= exhibition.exhibitionDate %></h4>
+      <p><%= exhibition.synopsis %></p>
+      <p><%= exhibition.disipline %></p>
+    </div>
+
+    <div class="col-lg-3">
+      <aside>
+      <% if(locals.isAuthenticated) { %>
+        <section>
+        <h4>Leave a comment</h4>
+        <form method="POST" action="/exhibitions/<%= exhibition.id %>/comments">
+        <textarea name="content" id="content" placeholder="Comment"></textarea>
+        <button class="button">Leave a comment</button>
+        </form>
+        </section>
+        <% } %>
 
 
-<section>
-  <h4>Comments</h4>
-  <% exhibition.comments.forEach((comment) => { %>
-    <p><%= comment.content %></p>
-    <small><%= comment.createdBy.username %></small>
+        <section>
+          <h4>Comments</h4>
+          <% exhibition.comments.forEach((comment) => { %>
+            <p><%= comment.content %></p>
+            <small><%= comment.createdBy.username %></small>
 
-    <% if(locals.isAuthenticated) { %>
-      <form method="POST" action="/exhibitions/<%= exhibition.id %>/comments/<%= comment.id %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <button>Delete</button>
-      </form>
-    <% } %>
-  <% }) %>
-</section>
-</aside>
-</div>
+            <% if(locals.isAuthenticated) { %>
+              <form method="POST" action="/exhibitions/<%= exhibition.id %>/comments/<%= comment.id %>">
+              <input type="hidden" name="_method" value="DELETE">
+              <button>Delete</button>
+              </form>
+              <% } %>
+              <% }) %>
+            </section>
+          </aside>
+        </div>
 
-
-
-</div>
-</div>
+      </div>
+    </div>
+  </div>

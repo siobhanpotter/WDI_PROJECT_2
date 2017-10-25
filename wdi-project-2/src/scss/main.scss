@@ -10,7 +10,7 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
-  background: url('../images/hero2.jpg') no-repeat center center;
+  background: url('../images/hero3.png') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -23,30 +23,42 @@ body {
 //   position: relative;
 // }
 
+.cover-title {
+  font-size: 150px;
+  font-color: white;
+}
+
+
 .heading {
   font-size: 100px;
   font-weight: bold;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-79%,-50%);
 }
 
-
-.card-main {
-  width: 70%;
-  margin: 40px auto;
-}
 
 .index-title {
   text-align: center;
-  padding: 50px;
+  // padding: 40px;
+  margin: 40px;
+  h1 {
+    font-size: 30px;
+    color: grey;
+  }
+}
+
+hr {
+  margin-bottom: 40px;
+  width: 80%;
 }
 
 
 
-//////////////////////////
-.register {
+.login-background {
+  width: 100%;
+  height: calc(100vh - 66px);
   background: url('../images/hero2.jpg') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -54,31 +66,34 @@ body {
   background-size: cover;
 }
 
+
+
 .registration-container {
   width: 100%;
-  padding: 100px 200px;
-}:
+  height: calc(100vh - 66px);
+}
 
 .registraion-form {
-  background-color: rgba(black, 0.2);
-  padding: 15px;
-}
-
-.login-form {
-  background-color: rgba(black, 0.2);
   padding: 15px;
 }
 
 
-
-
-.show-width {
-  width: 60%;
+.form-css {
+  padding: 50px;
+  .form-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 20px;
+    font-size: 20px;
+  }
+  h1 {
+    font-weight: bold;
+  }
 }
 
 
-
-
-.card-block {
-  hieght: 100px;
+.show-main {
+  margin: 40px;
+  
 }
