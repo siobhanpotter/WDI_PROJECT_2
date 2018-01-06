@@ -1,6 +1,5 @@
 const express = require('express');
 const router  = express.Router();
-// const statics = require('../controllers/statics');
 const registrations  = require('../controllers/registrations');
 const sessions  = require('../controllers/sessions');
 const exhibitions = require('../controllers/exhibitions');
@@ -27,13 +26,10 @@ router.route('/login')
 router.route('/logout')
   .get(sessions.delete);
 
-//****************************************************************************
 router.route('/exhibitions/:id/comments')
   .post(secureRoute, exhibitions.createComment);
 
 router.route('/exhibitions/:id/comments/:commentId')
   .delete(secureRoute, exhibitions.deleteComment);
-//*****************************************************************************
-
 
 module.exports = router;

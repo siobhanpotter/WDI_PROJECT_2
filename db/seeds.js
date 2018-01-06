@@ -72,22 +72,9 @@ User
     console.log(`${exhibitions.length} exhibitions created!`);
     console.log(exhibitions);
   })
-
-
   .catch((err) => {
     console.log(err);
   })
   .finally(() => {
     mongoose.connection.close();
   });
-
-
-
-
-
-
-
-
-
-// .catch((err) => console.log(err))
-// .finally(() => mongoose.connection.close());

@@ -1,40 +1,24 @@
-
-<div class="index-title">
-<h1 class="exhibitions-title">Current Exhibitions</h1>
+<div class="banner">
+  <h1 id="index-title">Current Exhibitions</h1>
 </div>
-
 <hr>
-
-<div class="container" class="card-main">
-
-  <div class="row" max-height="500px" class="item">
+<%# <div class="container exhibition-container">%>
+  <div class="row rows">
     <% exhibitions.forEach((exhibition) => { %>
-
-      <div class="col-lg-4" class="card-wrapper">
-      <div class="card" style="width: 23.5rem;"class="col-lg-4 col-md-8">
-
-        <a href="/exhibitions/<%= exhibition.id %>">
-
-          <img class="card-img-top" class="thumbnail" src="<%= exhibition.image %>" alt="<%= exhibition.name %>" alt="Card image cap" width="100%">
-
-          <div class="card-block" >
-            <h4 class="card-title"><%= exhibition.name %></h4>
-            <p class="card-text">
-              <%= exhibition.exhibitionDate %><br>
-
-              </p>
-            <p>
-              <% while(exhibition.stars--) { %> &star; <% } %>
-            </p>
+      <div class="col-lg-4 exhibition-wrapper" >
+        <div class="text-wrapper">
+          <div class="img-container">
+            <a href="/exhibitions/<%= exhibition.id %>">
+              <img class="index-img" src="<%= exhibition.image %>" alt="<%= exhibition.name %>" width="100%">
+            </a>
           </div>
-
-        </a>
-
+          <div class="exhibition-text" >
+            <h5><%= exhibition.name %></h5>
+            <p><%= exhibition.exhibitionDate %><br></p>
+            <p><% while(exhibition.stars--) { %> &star; <% } %></p>
+          </div>
+        </div>
       </div>
-      </div>
-
-
     <% }) %>
   </div>
-
-</div>
+<%# </div>%>

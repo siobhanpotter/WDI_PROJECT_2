@@ -4,10 +4,7 @@ function sessionsNew(req, res) {
   res.render('sessions/new');
 }
 
-//take imputted email, find user in the database, check if password matches existing, if either dont match display error
-
-
-function sessionsCreate(req, res, next) {////!!!!!!!!!!!!!!!!!!!!!!!!!!!!next may be a problem
+function sessionsCreate(req, res, next) {
   User
     .findOne({ email: req.body.email })
     .then((user) => {
@@ -20,13 +17,9 @@ function sessionsCreate(req, res, next) {////!!!!!!!!!!!!!!!!!!!!!!!!!!!!next ma
       req.flash('success', `Welcome back, ${user.username}!`);
       req.session.userId = user.id;
       req.session.isAuthenticated = true;
-
       req.user = user;
-      // req.flash('success', `${user.username}, you\'ve logged in!`);
-
       res.redirect('/');
     });
-  // .catch(next);
 }
 
 function sessionsDelete(req, res) {

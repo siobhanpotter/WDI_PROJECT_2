@@ -1,12 +1,12 @@
 const User = require('../models/user');
 
-//Function that renders the registration form
+//render the registration form
 function registrationsNew(req, res) { //(b)
   res.render('registrations/new');
 }
 
-// Function to create the new user
-function registrationsCreate(req, res, next) {//{!!!!!!!!!!!!!!!!!!!!!!!!next may become a problem
+// create the new user
+function registrationsCreate(req, res, next) {
   User
     .create(req.body)
     .then((user) => {
@@ -22,10 +22,6 @@ function registrationsCreate(req, res, next) {//{!!!!!!!!!!!!!!!!!!!!!!!!next ma
       res.status(500).end();
     });
 }
-
-
-
-
 
 module.exports = {
   new: registrationsNew,

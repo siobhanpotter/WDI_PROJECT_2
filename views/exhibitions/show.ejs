@@ -3,18 +3,13 @@
   <div class="container">
     <div class="row">
 
-
-
       <div class="col-lg-9" class="show-text">
-
         <img class="card-img-top" class="thumbnail" src="/<%= exhibition.image %>" alt="<%= exhibition.name %>" alt="Card image cap" width="100%">
         <h3><%= exhibition.name %></h3>
         <h4><%= exhibition.exhibitionDate %></h4>
-        <p><%= exhibition.synopsis %></p>
+        <p class="synopsis"><%= exhibition.synopsis %></p>
         <p><%= exhibition.disipline %></p>
       </div>
-
-
 
       <div class="col-lg-3">
         <aside>
@@ -27,7 +22,7 @@
             </form>
             </section>
             <% } %>
-          <section>
+            <section>
               <br>
               <h4>Comments</h4>
               <% exhibition.comments.forEach((comment) => { %>
