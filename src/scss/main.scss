@@ -20,7 +20,6 @@ html {
     bottom: 0;
     width: 100%;
     position: absolute;
-    padding: 100px;
     .footer-block {
       margin: 20px 0;
     }
@@ -29,7 +28,7 @@ html {
 
 .button {
   border: 2px solid white;
-  padding: 3px;
+  padding: 6.5px 3px 3px 3px;
   width: 180px;
   text-align: center;
 }
@@ -51,7 +50,6 @@ html {
   padding: 5%;
   font-weight: normal;
 }
-
 
 
 .homepage {
@@ -81,6 +79,10 @@ html {
 
 //Index Page
 
+.main-container {
+  margin: 30px;
+}
+
 .img-container {
    position:relative;
    overflow: hidden;
@@ -101,10 +103,6 @@ html {
 .exhibition-text {
   padding: 10px 5px;
 }
-
-// .rows {
-//   height: 100%;
-// }
 
 hr {
   margin: 40px;
@@ -150,28 +148,11 @@ hr {
 
 .show-text {
   margin-top: 10px;
+  padding: 10px;
 }
 
 .thumbnail {
   margin-bottom: 10px;
 }
 
-// .container {
-//   display: flex; /* or inline-flex */
-// }
-
-
-// .row{
-//     display: -webkit-flex;
-//     display: -ms-flexbox;
-//     display: flex;
-//
-//     -webkit-flex-wrap: wrap;
-//     -ms-flex-wrap: wrap;
-//     flex-wrap: wrap;
-// }
-// .row .item{
-//     display: -webkit-flex;
-//     display: -ms-flexbox;
-//     display: flex;
-// }
+}
