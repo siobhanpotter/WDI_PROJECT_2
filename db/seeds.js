@@ -37,17 +37,17 @@ User
         disipline: 'Action',
         image: 'images/wildlife.jpg'
       }, {
-        name: 'Insight Astronomy Photographer of the Year, Royal Observatory Greenwich',
+        name: 'Insight Astronomy Photographer of the Year, Royal Observatory',
         exhibitionDate: '2017-06-18',
         synopsis: 'The annual competition, which is now in its ninth year, sees talented professional and amateur photographers submit breathtaking shots of the skies, planets, space and stars in an effort to win the prestigious award. Enjoy some of the most spectacular visions of the cosmos in a beautiful setting steeped in astronomical history.',
         disipline: 'Thriller',
         image: 'images/astronomy.jpg'
       }, {
-        name: 'SOMNYAMA NGONYAMA, HAIL THE DARK LIONESS, AUTOGRAPH ABP',
+        name: 'SOMNYAMA NGONYAMA, AUTOGRAPH ABP',
         exhibitionDate: '2017-10-28',
         synopsis: 'Taken primarily in Europe, North America and Africa, each portrait asks critical questions about social justice, human rights and contested representations of the black body. Everyday objects are transformed into dramatic and historically loaded props, merging the political with the aesthetic. Scouring pads and latex gloves address themes of domestic servitude, while alluding to sexual politics, violence and the suffocating prisms of gendered identity.',
         disipline: 'Thriller',
-        image: 'images/ntozakhe.jpg'
+        image: 'images/hero3.png'
       }, {
         name: 'The ATLAS Yearbook, Atlas',
         exhibitionDate: '2017-10-31',
