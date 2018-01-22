@@ -47,7 +47,7 @@ User
         exhibitionDate: '2017-10-28',
         synopsis: 'Taken primarily in Europe, North America and Africa, each portrait asks critical questions about social justice, human rights and contested representations of the black body. Everyday objects are transformed into dramatic and historically loaded props, merging the political with the aesthetic. Scouring pads and latex gloves address themes of domestic servitude, while alluding to sexual politics, violence and the suffocating prisms of gendered identity.',
         disipline: 'Thriller',
-        image: 'images/hero3.png'
+        image: 'images/hero3.jpg'
       }, {
         name: 'The ATLAS Yearbook, Atlas',
         exhibitionDate: '2017-10-31',
